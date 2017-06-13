@@ -45,5 +45,5 @@ if($rv < 0){
 $dbh->disconnect();
 
 #redirects to index.html after saving an appointment
-print $q->redirect(-uri=>'http://localhost/appointment-application/index.html',
+print $q->redirect(-uri=>'http://localhost/TestProj/index.html',
                -nph=>1);
