@@ -27,9 +27,9 @@ if ($q->param()) {
 # Data from the form
 sub data($) {
     my ($q) = @_;
-    $date = $q->param('date');
-    $time = $q->param('time');
-    $desc = $q->param('description');
+    $date = $q->param('textdate');
+    $time = $q->param('texttime');
+    $desc = $q->param('textdescription');
 }
 
 my $datetime = $date . " " . $time;
