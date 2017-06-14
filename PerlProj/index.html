@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style/style.css">
+    <title>Perl Application</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="page-header">
+            <h2>Perl Application</h2> </div>
+        <div id="dashboard">
+            <button type="button" class="btn btn-default " id="newButton">New</button>
+        </div>
+        <div id="appointmentForm">
+            <!---Form Post Method Call---!>
+            <form action="saveAppointment.pl" enctype="multipart/form-data" method="post">
+                <button type="submit" class="btn btn-default" id="addButton">Add</button>&nbsp;
+                <button type="button" class="btn btn-default" id="cancelButton">Cancel</button>
+                <div class="form-horizontal top-buffer">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="date">Date:</label>
+                        <div class="col-sm-4">
+                            <input type="date" class="form-control" id="date" name='date' required> </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="time">Time</label>
+                        <div class="col-sm-4">
+                            <input type="time" class="form-control" id="time" name='time' required> </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="description">Desc</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="description" name='description' required> </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="form-inline top-buffer">
+            <input type="text" class="form-control" id="search" placeholder="Search..." size="40">&nbsp;
+            <button type="button" class="btn btn-default" id="searchButton">Search</button>
+        </div>
+    </div>
+    <div class="row">
+        <!---Area for printing the results---!>
+        <div id="tableArea" class="col-sm-6 top-buffer"> </div>
+        <div> </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/script.js"></script>
+</body>
+
+</html>
