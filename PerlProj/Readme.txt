@@ -10,7 +10,7 @@ Brackets: Text Editor
 
 # Steps to run the program 
 
-The project is test run using the xampp server so According the test run, if you want to run the project,
+The project is test run using the xampp server so According the test run, if you want to run the project with the xampp,
 - Copy the app to the folder htdocs.(Most probable location "C:\xampp\htdocs")
 - Check the perl location in every .pl file and make sure point to right location.( Most probable location "C:\xampp\perl\bin\perl.exe") 
 - The database file is db_appointment.sqlite
