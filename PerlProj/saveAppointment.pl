@@ -3,6 +3,7 @@
 use DBI;
 use strict;
 use CGI;
+use URI::Escape;
 
 my $q = new CGI;
 my $date;
@@ -29,7 +30,7 @@ sub data($) {
     my ($q) = @_;
     $date = $q->param('date');
     $time = $q->param('time');
-    $desc = $q->param('description');
+    $desc = uri_escape($q->param('description'));
 }
 
 my $datetime = $date . " " . $time;
