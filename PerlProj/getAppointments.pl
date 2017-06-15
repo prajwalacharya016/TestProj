@@ -3,7 +3,7 @@ print "Content-type : text/html\n\n";
 use DBI;
 use strict;
 use CGI;
-
+use URI::Escape;
 my $q = new CGI;
 
 if ($q->param()) {
@@ -38,7 +38,7 @@ if($rv < 0){
 
 my $result = "[";
 while(my @row = $statement->fetchrow_array()) {
-      $result .= "{" . '"'. "datetime" . '"' . " : " . '"'. $row[0] . '"' ." , " . '"'. "description" .'"'. " : ". '"'. $row[1]. '"' . "},";
+      $result .= "{" . '"'. "datetime" . '"' . " : " . '"'. $row[0] . '"' ." , " . '"'. "description" .'"'. " : ". '"'. uri_unescape($row[1]). '"' . "},";
 }
 chop($result);
 $result = $result ."]";

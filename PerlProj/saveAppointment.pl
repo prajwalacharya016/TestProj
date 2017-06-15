@@ -10,7 +10,7 @@ my $date;
 my $time;
 my $desc;
 
-#database connection
+##database connection
 my $dbfile = "db_appointment.sqlite";
 my $dsn = "DBI:SQLite:dbname=$dbfile";
 my $username = "";
@@ -34,17 +34,12 @@ sub data($) {
 }
 
 my $datetime = $date . " " . $time;
-my $query = qq(INSERT INTO appointment (datetime , description) VALUES ('$datetime','$desc'));
-print $query;
+my $query = qq(INSERT INTO appointment (datetime , description) VALUES (?,?));
 
 my $sth = $dbh->prepare($query);
-my $rv = $sth->execute()  or die $DBI::errstr;
-if($rv < 0){
-    print $DBI::errstr;
-}
+my $rv = $sth->execute($datetime, $desc);
 
 $dbh->disconnect();
 
 #redirects to index.html after saving an appointment
-print $q->redirect(-uri=>'http://localhost/PerlProj/index.html',
-               -nph=>1);
+print "Location: http://localhost/PerlProj/\n\n";
