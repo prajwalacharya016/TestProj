@@ -40,7 +40,7 @@ sub data($) {
 }
 ;
 #Code for basic validation and print the value into the front end, Never actually required because validation done by Javascript/JQuery
-#Checks only empty condition, daste past future check by Javascript
+#Checks only empty condition, date past future check by Javascript
 print CGI::header();
 open HTML, "copyIndx.html" or die "can't open html file!\n";
 
