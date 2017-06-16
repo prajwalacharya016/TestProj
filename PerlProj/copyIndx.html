@@ -24,7 +24,9 @@
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="date">Date:</label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control" id="date" name='date' required> </div>
+                            <input type="text" class="form-control" id="date" name='date' required>
+                            <label id="error" class="help-inline"></label>
+                        </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="time">Time</label>
@@ -39,7 +41,7 @@
                 </div>
             </form>
         </div>
-        <label id="error" class="help-inline">%Message%</label>
+        <label id="perlerror" class="help-inline">%Message%</label>
         <div class="form-inline top-buffer">
             <input type="text" class="form-control" id="search" placeholder="Search..." size="40">&nbsp;
             <button type="button" class="btn btn-default" id="searchButton">Search</button>
