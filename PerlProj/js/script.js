@@ -18,7 +18,7 @@ $(document).ready(function () {
         var now = new Date();
         now.setHours(0, 0, 0, 0);
         if (selectedDate <= now) {
-            alert("Please enter valid date");
+            $("#error").html("Please enter valid date");
             event.preventDefault();
         }
     });

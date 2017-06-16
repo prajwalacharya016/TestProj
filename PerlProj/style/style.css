@@ -1,7 +1,11 @@
-.top-buffer{
-	margin-top: 30px; 
+.top-buffer {
+    margin-top: 30px;
 }
 
-.table{
-	margin-left: 150px;
+.table {
+    margin-left: 150px;
+}
+
+#error {
+    color: red;
 }
