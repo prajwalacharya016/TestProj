@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    $("#date").datepicker();
     $("#appointmentForm").hide();
     $("#newButton").click(function () {
         $("#dashboard").hide();
