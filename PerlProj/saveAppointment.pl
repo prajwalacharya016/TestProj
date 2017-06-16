@@ -60,13 +60,9 @@ if($date eq "" or $time eq "" or $desc eq ""){
     my $sth = $dbh->prepare($query);
     my $rv = $sth->execute($datetime, $desc);
 }
-#
-    
-#   redirects to index.html after saving an appointment
-#print "Location: http://localhost/PerlProj/\n\n";
 
 $dbh->disconnect();
-# replace %MESSAGE% by whatever you want
+# replace %Message% by whatever you want
 $htmldata =~ s/\%Message%/$message/;
 
 # display the modified html
