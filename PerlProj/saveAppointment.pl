@@ -50,10 +50,21 @@ my $htmldata=join '', <HTML>;
 close HTML;
 
 # prepare the message to display
-my $message="";
+my $datemessage="";
+my $timemessage="";
+my $descmessage="";
+
 
 if($date eq "" or $time eq "" or $desc eq ""){
-    $message=$message.'ERROR!!!Please check for the empty field';
+    if ($date eq ""){
+        $datemessage=$datemessage.'Do not leave empty date fied';
+    }
+    if ($time eq ""){
+        $timemessage=$timemessage.'Do not leave empty time fied';
+    }
+    if (desc eq ""){
+        $descmessage=$descmessage.'Do not leave empty Description fied';
+    }
 }else{
     my $datetime = $date . " " . $time;
     my $query = qq(INSERT INTO appointment (datetime , description) VALUES (?,?));
@@ -63,7 +74,10 @@ if($date eq "" or $time eq "" or $desc eq ""){
 
 $dbh->disconnect();
 # replace %Message% by whatever you want
-$htmldata =~ s/\%Message%/$message/;
+$htmldata =~ s/\%DateMessage%/$datemessage/;
+$htmldata =~ s/\%TimeMessage%/$timemessage/;
+$htmldata =~ s/\%DescMessage%/$descmessage/;
+
 
 # display the modified html
 print $htmldata
